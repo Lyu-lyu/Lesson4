@@ -21,9 +21,10 @@ def save_to_file(ticker, spreadsheet):
 
 
 def main():
+    today = date.today().strftime('%Y-%m-%d')
+
     while True:
         ticker = input('Введите тикер: ').upper()
-        today = date.today().strftime('%Y-%m-%d')
         try:
             save_to_file(ticker, make_csv_with_ticker_data(ticker, today))
             print('Файл успешно создан')
